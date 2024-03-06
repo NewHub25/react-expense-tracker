@@ -1,9 +1,17 @@
-import { useState } from "react";
+import Balance from "./components/balance";
+import Header from "./components/header";
+import TransactionForm from "./components/transaction-form";
+import { GlobalProvider } from "./context/global-context";
 
 function App() {
-  const [count, setCount] = useState(0);
-
-  return <>Hello</>;
+  return (
+    <GlobalProvider>
+      <Header />
+      <Balance />
+      <TransactionForm />
+      <h1>Hello</h1>
+    </GlobalProvider>
+  );
 }
 
 export default App;
