@@ -1,6 +1,5 @@
 import Balance from "./components/balance";
 import ExpenseChart from "./components/expense-chart";
-import Header from "./components/header";
 import IncomeExpenses from "./components/income-expenses";
 import TransactionForm from "./components/transactions/transaction-form";
 import TransactionList from "./components/transactions/transaction-list";
