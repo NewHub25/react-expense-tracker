@@ -1,5 +1,5 @@
 import { useState } from "react";
-import useGlobalState from "../hooks/use-global-state";
+import useGlobalState from "../../hooks/use-global-state";
 
 export default function TransactionForm() {
   const { addTransaction } = useGlobalState();
@@ -9,7 +9,7 @@ export default function TransactionForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     addTransaction({
-      id: 1,
+      id: window.crypto.randomUUID(),
       description,
       amount,
     });
