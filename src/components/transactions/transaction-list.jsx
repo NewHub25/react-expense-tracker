@@ -1,7 +1,7 @@
 import useGlobalState from "../../hooks/use-global-state";
 
 export default function TransactionList() {
-  const { transactions } = useGlobalState();
+  const { transactions, deleteTransaction } = useGlobalState();
 
   return (
     <ul>
@@ -10,6 +10,7 @@ export default function TransactionList() {
           <li key={id}>
             <p>{description}</p>
             <span>{amount}</span>
+            <button onClick={() => deleteTransaction(id)}>x</button>
           </li>
         );
       })}
