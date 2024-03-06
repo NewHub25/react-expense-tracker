@@ -8,12 +8,19 @@ import { GlobalProvider } from "./context/global-context";
 function App() {
   return (
     <GlobalProvider>
-      <Header />
-      <IncomeExpenses />
-      <Balance />
-      <TransactionForm />
-      <TransactionList />
-      <h1>Hello</h1>
+      <main className="bg-zinc-900 text-white h-screen flex justify-center items-center">
+        <section className="container mx-auto w-2/6">
+          <section className="bg-zinc-800 p-10 rounded-lg flex gap-x-4">
+            <article>
+              <h1 className="capitalize text-4xl font-bold">Expense tracker</h1>
+              <IncomeExpenses />
+              <Balance />
+              <TransactionForm />
+            </article>
+            <TransactionList />
+          </section>
+        </section>
+      </main>
     </GlobalProvider>
   );
 }

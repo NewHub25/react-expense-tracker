@@ -26,6 +26,7 @@ export default function TransactionForm() {
           placeholder="Enter a description"
           onChange={(e) => setDescription(e.target.value)}
           autoFocus
+          className="bg-zinc-600 to-white px-3 py-2 rounded-lg block mb-2 w-full"
         />
         <input
           type="number"
@@ -33,8 +34,11 @@ export default function TransactionForm() {
           step={0.01}
           min={-1000_000}
           onChange={(e) => setAmount(parseFloat(e.target.value))}
+          className="bg-zinc-600 to-white px-3 py-2 rounded-lg block mb-2 w-full"
         />
-        <button>Add transaction</button>
+        <button className="bg-indigo-600 text-white px-3 py-2 rounded-lg block mb-2 w-full">
+          Add transaction
+        </button>
       </form>
     </section>
   );

@@ -18,11 +18,11 @@ export default function IncomeExpenses() {
 
   return (
     <>
-      <article>
+      <article className="flex justify-between my-2">
         <h3>Income</h3>
         <p>{total.income}</p>
       </article>
-      <article>
+      <article className="flex justify-between my-2">
         <h3>Expense</h3>
         <p>{total.expense}</p>
       </article>

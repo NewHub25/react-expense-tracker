@@ -9,9 +9,9 @@ export default function Balance() {
   );
 
   return (
-    <nav>
+    <nav className="flex justify-between">
       <h2>Balance</h2>
-      <h3>${total}</h3>
+      <p className="text-2xl font-bold">${total}</p>
     </nav>
   );
 }
