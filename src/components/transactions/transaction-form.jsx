@@ -16,6 +16,7 @@ export default function TransactionForm() {
       amount,
     });
     console.log({ description, amount });
+    e.target?.reset?.();
   };
 
   return (

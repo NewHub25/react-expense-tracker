@@ -5,7 +5,7 @@ export default function TransactionList() {
   const { transactions } = useGlobalState();
 
   return (
-    <aside className="w-full">
+    <>
       <h3 className="text-slate-300 text-xl font-bold">History</h3>
       <ul>
         {transactions.map((transaction) => {
@@ -14,6 +14,6 @@ export default function TransactionList() {
           );
         })}
       </ul>
-    </aside>
+    </>
   );
 }
