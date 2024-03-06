@@ -1,11 +1,18 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer } from "react";
 import appReducer from "../logic/app-reducer";
 import { initialState } from "../logic/constants";
 
 export const Context = createContext(null);
 
 export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(appReducer, initialState);
+  const [state, dispatch] = useReducer(appReducer, initialState, (initialArg) => {
+    const localData = localStorage.getItem("transactions");
+    return localData ? JSON.parse(localData) : initialArg;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("transactions", JSON.stringify(state));
+  }, [state]);
 
   const addTransaction = (transaction) => {
     dispatch({
@@ -22,7 +29,11 @@ export const GlobalProvider = ({ children }) => {
 
   return (
     <Context.Provider
-      value={{ transactions: state.transactions, addTransaction, deleteTransaction }}
+      value={{
+        transactions: state.transactions,
+        addTransaction,
+        deleteTransaction,
+      }}
     >
       {children}
     </Context.Provider>
